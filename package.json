@@ -1,0 +1,22 @@
+{
+  "name": "test-ci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Majd-iya/test-ci.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Majd-iya/test-ci/issues"
+  },
+  "homepage": "https://github.com/Majd-iya/test-ci#readme",
+  "devDependencies": {
+    "cypress": "^5.3.0"
+  }
+}
