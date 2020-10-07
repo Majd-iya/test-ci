@@ -17,6 +17,8 @@ steps:
 
 - script: |
     npm install
+    npm install cypress-multi-reporters
+    npm install mochawesome-report-generator
   displayName: 'npm install'
 
 - task: Npm@1
