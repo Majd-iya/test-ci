@@ -24,7 +24,28 @@ steps:
     command: 'custom'
     customCommand: 'run test'
   displayName: 'Npm run test'
-  
+
+- task: PublishBuildArtifacts@1
+    displayName: "Publish Artifact: cypress-and-azure-devops Screenshots "
+    inputs:
+      PathtoPublish: cypress/screenshots
+      ArtifactName: CypressAndAzureDevopsTestRunScreenshots
+    condition: failed()
+
+- task: PublishBuildArtifacts@1
+    displayName: "Publish Artifact: cypress-and-azure-devops Videos "
+    inputs:
+      PathtoPublish: cypress/videos
+      ArtifactName: CypressAndAzureDevopsTestRunVideos
+    condition: succeededOrFailed()
+
+- task: PublishTestResults@2
+    displayName: "Publish Test Results"
+    condition: succeededOrFailed()
+    inputs:
+      testResultsFormat: "JUnit"
+      testResultsFiles: "**/cypress-and-azure-devops-*.xml"
+      
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
