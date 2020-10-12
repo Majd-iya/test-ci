@@ -23,24 +23,3 @@ steps:
 
 - script : "npm run test"
   displayName: "Run end to end tests" 
-
-- task: PublishBuildArtifacts@1
-    displayName: "Publish Artifact: cypress-and-azure-devops Screenshots "
-    inputs:
-      PathtoPublish: cypress/screenshots
-      ArtifactName: CypressAndAzureDevopsTestRunScreenshots
-    condition: failed()  
-
-- task: PublishBuildArtifacts@1
-    displayName: "Publish Artifact: cypress-and-azure-devops Videos "
-    inputs:
-      PathtoPublish: cypress/videos
-      ArtifactName: CypressAndAzureDevopsTestRunVideos
-    condition: succeededOrFailed()      
-    
-- task: PublishTestResults@2
-    displayName: "Publish Test Results"
-    condition: succeededOrFailed()
-    inputs:
-      testResultsFormat: "JUnit"
-      testResultsFiles: "**/cypress-and-azure-devops-*.xml"
