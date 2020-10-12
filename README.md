@@ -23,7 +23,7 @@ l'integration continue est pratique qui consiste à automatiser l'integration du
 
 
 **Pourquoi le CI ?**
-- L'un des points importants de l'utilisation de CI est d'avoir moins de conflits lors de l'intégration du code.
+- L'un des pointsss importants de l'utilisation de CI est d'avoir moins de conflits lors de l'intégration du code.
 - Etre sur du succès des tests ( E2E ) aprés chaque changement , autrement c'est facile d'avoir un suivi sur les erreurs qui peuvent  se produire lors du changement.
 - assurez que l'intégration n'excute jamais qu'avant avoir passé par des etapes des tests qui sont défnis dans le *Pipeline* !!!
  
