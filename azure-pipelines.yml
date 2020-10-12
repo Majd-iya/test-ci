@@ -23,7 +23,8 @@ steps:
   inputs:
     command: 'custom'
     customCommand: 'run test'
-
+  displayName: 'Npm run test'
+  
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
