@@ -46,7 +46,7 @@ steps:
     testResultsFormat: "JUnit"
     testResultsFiles: "**/cypress-and-azure-devops-*.xml"
 
-- task: PublishTestResults@2
+- task: PublishTestResultsReposrts@2
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: '*.xml'
