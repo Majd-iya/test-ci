@@ -15,12 +15,32 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- script: |
-    npm install
+- script: "npm install"
   displayName: 'npm install '
 
-- task: Npm@1
-  inputs:
-    command: 'custom'
-    customCommand: 'run test'
+- script: "npm run pretest"
+  displayName: "Clear reports"
+
+- script : "npm run test"
+  displayName: "Run end to end tests" 
+
+- task: PublishBuildArtifacts@1
+    displayName: "Publish Artifact: cypress-and-azure-devops Screenshots "
+    inputs:
+      PathtoPublish: cypress/screenshots
+      ArtifactName: CypressAndAzureDevopsTestRunScreenshots
+    condition: failed()  
+
+- task: PublishBuildArtifacts@1
+    displayName: "Publish Artifact: cypress-and-azure-devops Videos "
+    inputs:
+      PathtoPublish: cypress/videos
+      ArtifactName: CypressAndAzureDevopsTestRunVideos
+    condition: succeededOrFailed()      
     
+- task: PublishTestResults@2
+    displayName: "Publish Test Results"
+    condition: succeededOrFailed()
+    inputs:
+      testResultsFormat: "JUnit"
+      testResultsFiles: "**/cypress-and-azure-devops-*.xml"
