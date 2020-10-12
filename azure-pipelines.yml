@@ -26,7 +26,7 @@ steps:
   displayName: 'Npm run test'
 
 - task: PublishBuildArtifacts@1
-  displayName: "Publish Artifact: cypress-and-azure-devops Screenshots "
+  displayName: "Publish Artifact: cypress-and-azure-devops Screenshots"
   inputs:
     PathtoPublish: cypress/screenshots
     ArtifactName: CypressAndAzureDevopsTestRunScreenshots
@@ -46,7 +46,7 @@ steps:
     testResultsFormat: "JUnit"
     testResultsFiles: "**/cypress-and-azure-devops-*.xml"
 
-- task: PublishTestResultsReposrts@2
+- task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: '*.xml'
