@@ -8,7 +8,7 @@
 
 
 **Exemple**
-  Un *End to end*  test qui décrit le scénario du login dés que l'utilisateur navigues vers la page du login jusqu'il arrivera à se connecter correctement.
+  Un *End d to end*  test qui décrit le scénario du login dés que l'utilisateur navigues vers la page du login jusqu'il arrivera à se connecter correctement.
 
 **Pourquoi les test End to End?**
 
