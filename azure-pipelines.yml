@@ -17,14 +17,12 @@ steps:
 
 - script: |
     npm install 
-  workingDirectory: '$(System.DefaultWorkingDirectory)/BorneWeb'  
-  displayName: 'npm install'
+  displayName: 'npm install '
 
 - task: Npm@1
   inputs:
     command: 'custom'
     customCommand: 'run test'
-  workingDirectory: '$(System.DefaultWorkingDirectory)/BorneWeb'  
   displayName: 'Npm run test'
 
 - task: PublishBuildArtifacts@1
