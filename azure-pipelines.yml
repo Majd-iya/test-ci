@@ -27,8 +27,8 @@ steps:
   displayName: 'npm install '
   condition: ne(variables['CacheRestored'], 'true')
 
-- script: cypress install
-  displayName: 'npm install cypress '
+- script: npm install cypress
+  displayName: ' install cypress '
 
 
 - task: Npm@1
