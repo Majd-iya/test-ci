@@ -9,20 +9,29 @@ trigger:
 pool:
   vmImage: 'windows-2019'
 
+variables:
+  npm_config_cache: $(Pipeline.Workspace)/.npm
 steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
+- task: Cache@2
+  inputs:
+    key: 'npm | "$(Agent.OS)" | package-lock.json'
+    restoreKeys: |
+       npm | "$(Agent.OS)"
+    path: $(npm_config_cache)
+  displayName: Cache npm
 
-- script: |
-    npm install 
+- script: npm ci
   displayName: 'npm install '
 
 - task: Npm@1
   inputs:
     command: 'custom'
-    customCommand: 'run test'
+    customCommand: 'run scripts'
+  continueOnError: false  
   displayName: 'Npm run test'
 
 - task: PublishBuildArtifacts@1
@@ -45,11 +54,4 @@ steps:
   inputs:
     testResultsFormat: "JUnit"
     testResultsFiles: "**/cypress-and-azure-devops-*.xml"
-
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: '*.xml'
-    searchFolder: '$(System.DefaultWorkingDirectory)/cypress/reports/junit'
-    mergeTestResults: true
-    testRunTitle: 'Test publish result'
+    failTaskOnFailedTests: true
