@@ -34,4 +34,4 @@ Le pipeline est une série d'étapes qui doivent être exécutées à chaque cha
 **Si tous est Ok**
 
 La dérniere étape du flow est le **Release** , c'est la distribution de la version finale d'une application autrement c'est une version déployable du projet vu que c'est quelle a passé du étapes.
- 
+ ....
