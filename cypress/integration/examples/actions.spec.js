@@ -9,7 +9,7 @@ context('Actions', () => {
 
   it('should fail', () => {
     // https://on.cypress.io/type
-    expect(false).to.be.true
+    expect(false).to.be.false
 
   })
 
