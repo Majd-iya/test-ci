@@ -3,7 +3,7 @@
 
 ## Les tests End to End
 
-**Définition**
+**Définitions**
  Les test end to end sont des test qui sert  à tester la fonctionnalité et les performances de l'application on mettant en consideration que l'utilisateur lui-même expérimente le produit par des scénarios biens définis. autrement c'est le fait pour tester si le flux d'une application du début à la fin se comporte comme prévu.
 
 
